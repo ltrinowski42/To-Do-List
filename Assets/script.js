@@ -21,23 +21,21 @@ function saveTodo(){
 
     //check for duplicate todos
     const isDuplicate =
-    todos.some((todo) => todo.value === todoValue);
+    todos.some((todo) => todo.value.toUpperCase() === todoValue.toUpperCase());
 
     if(isEmpty){
         alert("Todo's input is empty");
     } else if (isDuplicate){
         alert("Todo is duplicate");
-    }
-        else
-        {
-        const todo = {
+
+    } else {
+         todos.push({
             value : todoValue,
             checked :false,
             color : '#' + Math.floor(Math.random() * 16777215).toString(16),
-         }
-     
-         todos.push(todo);
-     
-         console.log(todos);
+         });
+
+         todoInput.value == "";
+
      }
     }
