@@ -1,6 +1,6 @@
 //select elements
-const form = document.getElemebtById("todoform")
-const todoInput = document.getElemebtById("newtodo")
+const form = document.getElementById("todoform")
+const todoInput = document.getElementById("newtodo")
 
 //variables
 let todos = [];
@@ -13,16 +13,23 @@ form.addEventListener('submit', function (event) {
 })
 
 //save todo
-function saveToDo(){
+function saveTodo(){
     const todoValue = todoInput.value
 
-    const todo = {
-       value : todoValue,
-       checked :false,
-       color : '#' + Math.floor(Math.random() * 16777215).toString(16),
+    //check if the todo is empty
+    const isEmpty = todoValue === '';
+
+    if(isEmpty){
+        alert("Todo's input is empty");
+    }else{
+        const todo = {
+            value : todoValue,
+            checked :false,
+            color : '#' + Math.floor(Math.random() * 16777215).toString(16),
+         }
+     
+         todos.push(todo);
+     
+         console.log(todos);
+     }
     }
-
-    todos.push(todo);
-
-    console.log(todos);
-}
