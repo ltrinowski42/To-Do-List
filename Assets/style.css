@@ -35,7 +35,7 @@ body {
 header {
   width: 100%;
   height: var(--header-height);
-  background-image: url('./img/bg.jpg');
+  background-image: url('to-do-list-img.jpg');
   background-size: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -72,7 +72,7 @@ header {
   height: 40px;
   font-size: 1rem;
   background-color: transparent;
-  color: rgb(255, 247, 0);
+  color: rgb(110, 97, 231);
   border: none;
   border-left: 0px;
   cursor: pointer;
