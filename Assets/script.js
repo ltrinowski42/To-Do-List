@@ -19,9 +19,17 @@ function saveTodo(){
     //check if the todo is empty
     const isEmpty = todoValue === '';
 
+    //check for duplicate todos
+    const isDuplicate =
+    todos.some((todo) => todo.value === todoValue);
+
     if(isEmpty){
         alert("Todo's input is empty");
-    }else{
+    } else if (isDuplicate){
+        alert("Todo is duplicate");
+    }
+        else
+        {
         const todo = {
             value : todoValue,
             checked :false,
