@@ -1,6 +1,7 @@
 //select elements
 const form = document.getElementById("todoform")
 const todoInput = document.getElementById("newtodo")
+const todosListEl = document.getElementById("todos-list")
 
 //variables
 let todos = [];
@@ -10,11 +11,12 @@ form.addEventListener('submit', function (event) {
     event.preventDefault()
 
     saveTodo();
-})
+    renderTodos();
+});
 
 //save todo
 function saveTodo(){
-    const todoValue = todoInput.value
+    const todoValue = todoInput.value;
 
     //check if the todo is empty
     const isEmpty = todoValue === '';
@@ -39,3 +41,19 @@ function saveTodo(){
 
      }
     }
+
+//render todos
+todos.forEach((todo, index) => {
+    todosListEl.innerHTML += `
+    <div class="todo" id=${index}>
+      <i 
+        class="bi ${todo.checked ? 'bi-check-circle-fill' : 'bi-circle'}"
+        style="color : ${todo.color}"
+        data-action="check"
+      ></i>
+      <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
+      <i class="bi bi-pencil-square" data-action="edit"></i>
+      <i class="bi bi-trash" data-action="delete"></i>
+    </div>
+    `;
+  });
