@@ -27,7 +27,7 @@ function saveTodo(){
 
     if(isEmpty){
         alert("Todo's input is empty");
-    } else if (isDuplicate){
+    } else if (isDuplicate) {
         alert("Todo is duplicate");
 
     } else {
